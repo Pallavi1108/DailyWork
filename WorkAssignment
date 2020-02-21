@@ -1,0 +1,95 @@
+package com.self.practice;
+
+import java.util.Scanner;
+
+public class EvenOdd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int number;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a number to check whether it is Even or Odd:");
+		number = input.nextInt();
+		
+		if(number%2 == 0) 
+			System.out.println("Number Is Even.");
+		else 
+		System.out.println("Number Is Odd.");
+	
+
+	}
+}
+
+package com.self.practice;
+
+import java.util.Scanner;
+
+public class LargestInThree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num1, num2, num3;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter number First:");
+		num1 = input.nextInt();
+		System.out.println("Enter number Second:");
+		num2 = input.nextInt();
+		System.out.println("Enter number Third:");
+		num3 = input.nextInt();
+		 
+		if (num1>num2 && num1>num3)
+				System.out.println("Number "+num1+" is largest");
+		
+		else if (num2>num1 && num2>num3)
+				System.out.println("Number "+num2+" is largest");
+		
+		else
+			System.out.println("Number "+num3+" is largest");
+	}
+
+}
+
+package com.self.practice;
+import java.util.Scanner;
+public class SwapNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int temp = 0;
+		System.out.println("Before Swapping");
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter Number 1: ");
+		int num1 = input.nextInt();
+		Scanner newinput = new Scanner(System.in);
+		System.out.println("Enter Number 2: ");
+		int num2 = newinput.nextInt();
+		temp = num1;
+		num1 = num2;
+		num2 = temp;
+		System.out.println("Numbers after Swapping: first number : "+num1 +"  Second number  is: "+num2);
+	}
+
+}
+
+package com.self.practice;
+
+import java.util.Scanner;
+
+public class CheckVowel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		char Alphabet;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter an Alphabet to check whether it is vowel or consonant");
+		Alphabet = input.nextLine().charAt(0);
+		
+		if (Alphabet == 'a' ||  Alphabet == 'e' ||  Alphabet == 'i' ||  Alphabet == 'o' ||  Alphabet == 'u')
+			System.out.println("Vowel");
+		else
+		System.out.println("Consonant");
+
+	}
+
+}
