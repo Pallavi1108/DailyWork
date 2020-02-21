@@ -1,110 +1,46 @@
-package cog.cognizant;
-
+package cog.clas.practice;
+import java.util.ArrayList;
+import java.util.List;
 public class EmployeeDAOImpl {
-
-
-		int id;
-		String name;
-
-		String address;
-		public String getAddress() {
-			return address;
-		}
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-
-		String designation;
-		int age;
-		double salary;
-		long phone;
+	static ArrayList<Employee> employees = null;
+	static {
+		employees = new ArrayList<>();
+		Employee emp1 = new Employee(101,"Abhinav", "Indore", "Digital Marketing", 23, 50000, 7000505030L);
+		Employee emp2 = new Employee(102,"Pallavi", "Rewa", "Java Developer", 22, 25000, 7000505040L);
+		Employee emp3 = new Employee(103,"Nikhil", "Jabalpur", "Phython Developer", 21, 30000, 7000404030L);
+		Employee emp4 = new Employee(104,"Satyam", "Hoshangabad", "Java Developer", 24, 28000, 7000505060L);
+		Employee emp5 = new Employee(105,"Mrinal", "Damoh", "Testing", 24, 20000, 7000705030L);
 		
-		public EmployeeDAOImpl(){
-			
-		}
-		public EmployeeDAOImpl(int id, String name, String address,String designation, int age, double salary, long phone) {
-			super();
-			this.id = id;
-			this.name = name;
-			this.address = address;
-			this.designation = designation;
-			this.age = age;
-			this.salary = salary;
-			this.phone = phone;
-		}
-
-
-		public int getId() {
-			return id;
-		}
-
-
-		public void setId(int id) {
-			this.id = id;
-		}
-
-
-		public String getName() {
-			return name;
-		}
-
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-
-		public String getDesignation() {
-			return designation;
-		}
-
-
-		public void setDesignation(String designation) {
-			this.designation = designation;
-		}
-
-
-		public int getAge() {
-			return age;
-		}
-
-
-		public void setAge(int age) {
-			this.age = age;
-		}
-
-
-		public double getSalary() {
-			return salary;
-		}
-
-
-		public void setSalary(double salary) {
-			this.salary = salary;
-		}
-
-
-		public long getPhone() {
-			return phone;
-		}
-
-
-		public void setPhone(long phone) {
-			this.phone = phone;
-		}
+		employees.add(emp1);
+		employees.add(emp2);
+		employees.add(emp3);
+		employees.add(emp4);
+		employees.add(emp5);
 		
-	//	@Override
-	//	public String toString() {
-		//	return "Employee [id=" + id + ", name=" + name + ", address=" + address + ", designation=" + designation
-			//		+ ", age=" + age + ", salary=" + salary + ", phone=" + phone + "]";
-		@Override
-		public String toString() {
+		}
+	public void addEmployee(Employee emp) {
+		employees.add(emp);
+	}
+	public void deleteEmployee(Employee emp) {
+		employees.remove(emp);
+	}
+	public void updateEmployee(Employee emp) {
+		emp.setName(emp.name);
+	}
+	public Employee getEmployeeById(int id) {
+		for(Employee e : employees) {
+			if(e.getId() == id) {
+				return e;
+			}
+		}
+		return null; 
+	}
+	
+	public List<Employee> getAllEmployees() {
 		// TODO Auto-generated method stub
-		return id+" : " + name + " : " + designation +" : ";
-		}
+		return employees;
+	}
+	
 
-
-		
 	}
 
