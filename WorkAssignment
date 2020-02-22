@@ -91,5 +91,139 @@ public class CheckVowel {
 		System.out.println("Consonant");
 
 	}
+package com.cts.training;
+
+import java.util.Scanner;
+
+public class Alpha {
+	static char c;
+	public static void main(String[] args) {
+
+ 	Scanner input =  new Scanner(System.in);
+ 	System.out.println("Enter to check it Alphabet or not:");
+ 	  c = input.nextLine().charAt(0);
+ 	if ((c>='a' && c<='z') || (c>='A' && c<='Z')){ 
+ 		System.out.println("Alphabet");}
+ 	else {
+ 		System.out.println("Not Alphabet");
+}
+ 	}
+}
+}
+package com.cts.training;
+import java.util.Scanner;
+public class LeapYear {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter Year: ");
+		int year = input.nextInt();
+		if(year % 4 == 0) {
+			if(year % 100 == 0) {
+			if(year % 400 ==0) {
+			
+				System.out.println("Its a Leap year");
+			}
+			else
+				System.out.println("Not A Leap year.");
+
+		}
+			else
+				System.out.println("Not A Leap year.");
+	}
+}
+}
+package com.cts.training;
+
+import java.util.Scanner;
+
+public class PostiveNegative {
+public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter A Number:");
+	int number = input.nextInt();
+	if(number > 0) {
+		System.out.println("Positive");
+	}
+	else 
+		System.out.println("Negative");
+	
+	
+}
+}
+
+package com.cts.training;
+
+import java.util.Scanner;
+
+public class AddTwo {
+
+	public static void main(String[] args) {
+		int number1, number2, sum;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter First Number: ");
+		number1 = sc.nextInt();
+		Scanner cs = new Scanner(System.in);
+		System.out.println("Enter Second Number: ");
+		number2 = cs.nextInt();
+		sum = number1 + number2;
+		System.out.println("Sum of the numbers is: " +sum);
+	}
 
 }
+package com.cts.training;
+import java.util.Scanner;
+public class Divide {
+
+	public static void main(String[] args) {
+	Scanner input =new Scanner(System.in);
+	System.out.print("Enter Divisor:");
+	int divisor = input.nextInt();
+	System.out.println("Enter Dividend:");
+	int dividend = input.nextInt();
+	int quotient = dividend / divisor;
+	int remainder = dividend % divisor;
+	
+	System.out.println("Quoitent  is: " +quotient+"Remainder is:"+remainder);
+	
+}
+}
+package com.cts.training;
+
+import java.util.Scanner;
+
+public class First {
+
+	public static void main(String[] args) {
+		int num;
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter an Integer: ");
+		num = sc.nextInt();
+		System.out.println("Entered Integer is: " +num);
+	}
+
+}
+package com.cts.training;
+
+import java.util.Scanner;
+
+public class MultiFloNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float number1, number2, Product;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter First Number: ");
+		number1 = sc.nextInt();
+		Scanner cs = new Scanner(System.in);
+		System.out.println("Enter Second Number: ");
+		number2 = cs.nextInt();
+		Product = number1 * number2;
+		System.out.println("Product of the numbers is: " +Product);
+	}
+	}
+
+
+
