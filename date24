@@ -1,0 +1,166 @@
+package com.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class JdbcDemo1 {
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	
+	Class.forName("com.mysql.jdbc.Driver");
+	
+	String url = "jdbc:mysql://localhost:3306/ctspune";
+	Connection con = DriverManager.getConnection(url, "root", "root");
+	Statement stmnt = con.createStatement();
+	// String query = "create table User(Id int primary key, name varchar(50), address varchar(100), age int, phone long )";
+	// String query ="insert into User values(4, 'Satyam Solanki','Panchmarhi', 22, 7100504030)";
+//	String query = "select * from User";
+//	ResultSet rs = stmnt.executeQuery(query);
+//	while(rs.next()) {
+		// int id = rs.getInt(1);
+	// String name = rs.getString(2);
+	 //	String address = rs.getString(3);
+	// int age = rs.getInt(4);
+	//	long phone = rs.getLong(5);
+		
+	String query = "update User set name = 'Pallavi singh' where id = 1";
+	
+ stmnt.executeUpdate(query);
+	//	System.out.println(id+":" +name+":"+address+":"+age+":"+phone);
+	// }
+//	int result = stmnt.executeUpdate(query);
+	//  if(result>0) {
+	//	System.out.println("Record Inserted Sucessfully!!");
+	// }
+	// else {
+	//	System.out.println("Something is wrong...");
+	// }
+// }
+}
+}
+
+package com.training.jdbc;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class JdbcDemo2 {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, NumberFormatException, IOException {
+		
+		BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
+	//	System.out.println("Enter Employee Id : ");
+		//int id = Integer.parseInt(br.readLine());
+	//	System.out.println("Enter Employee Name : ");
+	//	String name = br.readLine();
+	//	System.out.println("Enter Employee Address : ");
+	//	String address = br.readLine();
+	//	System.out.println("Enter Employe Age");
+	//	int age = Integer.parseInt(br.readLine());
+	//	System.out.println("Enter Employee Phone no");
+	//	long phone = Long.parseLong(br.readLine());
+		
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		String url = "jdbc:mysql://localhost:3306/ctspune";
+		Connection con = DriverManager.getConnection(url, "root", "root");
+	
+	//	String query = "insert into employee value(?,?,?,?,?)";
+	//	String query = "update employee set name =? where id=?";
+	//	String query = "delete from employee where id =?";
+		String query = "select * from employee";
+		
+		PreparedStatement ps = con.prepareStatement(query);
+		ResultSet rs = ps.executeQuery(query);
+	//	ps.setInt(1, id);
+	//	ps.setInt(2, id);
+	//	ps.setString(1, name);
+	//	ps.setString(3, address);
+	//	ps.setInt(4, age);
+	//  ps.setLong(5, phone);
+	//	int result = ps.executeUpdate();
+		/*
+		 * if (result>0) { System.out.println("Data Inserted Successfully");
+		 * 
+		 * } else { System.out.println("Try Again"); }
+		 */
+		while (rs.next()) {
+			 int id = rs.getInt(1);
+			
+			String name = rs.getString(2);
+			String address = rs.getString(3);
+			int age = rs.getInt(4);
+			long phone = rs.getLong(5);
+			System.out.println("---------------Employee-"+id+" Record------------");
+			System.out.println(id+" : "+name+":" +address+":" +age+":"+phone);
+			}
+			}
+
+	}
+
+
+
+package com.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class JdbcDemo {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//1. LOad the driver for the database.
+		// 1.1 By using ForName() method
+		
+		Class.forName("com.mysql.jdbc.Driver");
+ // 1.2 
+	// 	Driver driver = new com.mysql.jdbc.Driver();
+		
+		
+		// 2. Establish the Connection
+		String url = "jdbc:mysql://localhost:3306/ctspune";
+		Connection conn = DriverManager.getConnection(url, "root", "root");
+		// System.out.println(conn.getClass().getName());
+		// Statement is responsible for executing SqL Query
+	Statement stmt = conn.createStatement();
+//	String query ="insert into employee values(5,'Nikhil', 'Pune', 22, 7266671750)";
+//	String query ="update employee set address='Jabalpur' where id = 5";
+//	String query = "delete from employee where id = 2";
+	String query = "select * from employee";
+	ResultSet rs = stmt.executeQuery(query);
+	while (rs.next()) {
+	 int id = rs.getInt(1);
+	
+	String name = rs.getString(2);
+	String address = rs.getString(3);
+	int age = rs.getInt(4);
+	long phone = rs.getLong(5);
+	System.out.println(id+" : "+name+":" +address+":" +age+":"+phone);
+	}
+	}
+
+ }
+	
+	
+	// int result = stmt.executeUpdate(query);
+	// if(result >0) {
+	//	System.out.println("Record Inserted Sucessfully!!");
+	//}
+	//else {
+	//	System.out.println("Something went wrong...");
+//	}
+//	}
+	//}
+
+
